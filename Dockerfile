@@ -1,7 +1,9 @@
 from ubuntu:18.10
 
+ARG CONFD_VER
+
 ADD Confd-Basic-License-Agreement-1.1x.pdf /
-ADD confd-basic-6.6.linux.x86_64/confd-basic-6.6.linux.x86_64.installer.bin /confd-install
+ADD confd-basic-${CONFD_VER}.linux.x86_64/confd-basic-${CONFD_VER}.linux.x86_64.installer.bin /confd-install
 
 RUN apt-get update; apt-get install -y \
         openssh-client \
